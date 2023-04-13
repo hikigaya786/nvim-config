@@ -34,3 +34,11 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- split screen and navigation
+vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true })
+vim.keymap.set("n", "<leader>h", ":wincmd h<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>l", ":wincmd l<CR>", { noremap = true })
+
+-- spell check and correcting the worjkjk spellin
+vim.keymap.set("n", "<F3>", "silent :set spell!<CR>")

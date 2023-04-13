@@ -1,5 +1,7 @@
--- setup the gopls for golang lsp server
+--singlsingle setup the gopls for golang lsp server
 require'lspconfig'.gopls.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
     cmd = {"gopls", "serve"},
     filetypes = {"go", "gomod"},
     root_dir = require'lspconfig/util'.root_pattern("go.work", "go.mod", ".git"),
@@ -7,6 +9,7 @@ require'lspconfig'.gopls.setup{
         gopls = {
             analyses = {
                 unusedparams = true,
+                fillstruct = true,
             },
             staticcheck = true,
             gofumpt = true,

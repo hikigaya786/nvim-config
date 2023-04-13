@@ -14,7 +14,11 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- tokyonight theme
   use 'folke/tokyonight.nvim'
+
+  -- onedark theme
+  use 'navarasu/onedark.nvim'
 
   -- treesitter
   use {
@@ -62,5 +66,15 @@ return require('packer').startup(function(use)
 
     -- git gutter for git diffs
     use("airblade/vim-gitgutter")
+
+    -- for todo
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup {
+            }
+        end
+    }
 
 end)
