@@ -10,7 +10,7 @@ if not status_ok_1 then
 end
 
 local servers = {
-    -- "lua_ls",
+    "lua_ls",
     -- "tsserver",
     -- "html",
     "gopls",
@@ -51,7 +51,7 @@ if not utils_status then
     return
 end
 
-local opts = {}
+local global_opts = {}
 
 -- loop through the servers
 for _, server in pairs(servers) do
@@ -74,5 +74,5 @@ for _, server in pairs(servers) do
     if opts == nil then
 	    print("NIL")
     end
-    lspconfig[server].setup{opts}
+    lspconfig[server].setup(global_opts)
 end
